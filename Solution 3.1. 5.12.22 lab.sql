@@ -37,4 +37,27 @@ VALUES (3 ,'TAMMY' , 'SANDERS', 79, 'TAMMY.SANDERS@sakilacustomer.org' ,2 ,1 ,0 
 # select customer_id from sakila.customer
 # where first_name = 'CHARLOTTE' and last_name = 'HUNTER';
 # Use similar method to get inventory_id, film_id, and staff_id.
+SELECT *
+FROM sakila.rental;
 
+SELECT *
+FROM sakila.film
+WHERE title = 'Academy Dinosaur'; -- film_id is 1
+
+SELECT *
+FROM sakila.inventory
+WHERE film_id = 1;
+
+SELECT customer_id FROM sakila.customer
+WHERE first_name = 'CHARLOTTE' AND last_name = 'HUNTER';
+
+SELECT *
+FROM sakila.staff;
+
+INSERT INTO sakila.rental(rental_date, inventory_id, customer_id, staff_id)
+VALUES
+('2021-08-23 00:00:00',4,130,1);
+
+SELECT *
+FROM sakila.rental
+WHERE rental_date = '2021-08-23 18:40:46'
